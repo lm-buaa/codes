@@ -44,3 +44,24 @@ def create():               #定义生成子窗口的函数
 def aa():                #定义添加学生成绩的aa函数
     def huimie2():       #定义毁灭2函数，功能为把输入学生姓名的窗口关闭
         stu.destroy()
+    def xingming():      #定义姓名函数，对输入的姓名进行判断
+        x=s.get()        #x为输入框中输入的名字
+        if x=='':        #如果x为空白，则提示“请重新输入学生姓名”
+            messagebox.showerror('错误','请重新输入学生姓名')
+        if x in student_list.keys():  #如果x已存在，则提示“该学生已存在”
+            messagebox.showerror('错误','该学生已存在')
+        if x not in student_list.keys() and x!='':  #如果x不为空白也为不存在与student_list字典中
+            
+            def huimie3():    #定义毁灭3函数，功能为把输入学生成绩的窗口关闭
+                gra.destroy()
+            
+            def fenshu():     #定义分数函数，对输入的分数进行判断
+                y=g.get()     #y为输入框中输入的分数
+                if y=='':     #如果y为空白，则提示“请重新输入学生成绩”
+                    messagebox.showerror('错误','请重新输入学生成绩')
+                if int(y)<0 or int(y)>100:  #如果分数低于0或高于100，则提示“分数异常”
+                    messagebox.showerror('错误','录入失败，分数异常')
+                if int(y)>=0 and int(y)<=100:  #如果分数合理，则录入成功
+                    messagebox.showinfo('成功','操作成功')  #提示“操作成功”
+                    student_list[x]=y   #把姓名和分数添加到字典里
+                    huimie3()
