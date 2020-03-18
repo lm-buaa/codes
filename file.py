@@ -27,3 +27,20 @@ def dengru():        #定义登陆函数
     else:          #如果输入的用户名或密码不为空但错误
         messagebox.showerror('登陆失败','用户名或密码错误')
         #弹出窗口，标题为“登陆失败”，标语为“用户名或密码错误”
+
+def create():               #定义生成子窗口的函数
+    def huimie1():          #定义毁灭1函数，功能为初始窗口关闭
+        top.destroy()
+    top=Tk()                #生成一个字窗口
+    top.geometry("250x100") #大小为长为250，宽为100
+    top.title('学生管理系统')  #标题为“学生管理系统”
+    add=Button(text='添加成绩',command=aa)  #第一个按钮为“添加成绩”按钮
+    check=Button(text='查看成绩',command=cc)  #第二个按钮为“查看成绩”按钮
+    likai=Button(text='退出系统',command=huimie1)  #第三个按钮为“退出系统”按钮
+    add.grid_configure(column=1,row=1,columnspan=1,rowspan=1)    #设置位置
+    check.grid_configure(column=1,row=2,columnspan=1,rowspan=1)
+    likai.grid_configure(column=1,row=3,columnspan=1,rowspan=1)
+    top1.mainloop()
+def aa():                #定义添加学生成绩的aa函数
+    def huimie2():       #定义毁灭2函数，功能为把输入学生姓名的窗口关闭
+        stu.destroy()
