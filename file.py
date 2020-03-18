@@ -65,3 +65,17 @@ def aa():                #定义添加学生成绩的aa函数
                     messagebox.showinfo('成功','操作成功')  #提示“操作成功”
                     student_list[x]=y   #把姓名和分数添加到字典里
                     huimie3()
+            messagebox.showinfo('成功','姓名已保存，请继续录入成绩')  #提示“继续下一步操作”
+            huimie2()   #调用毁灭2函数，把输入学生姓名的窗口关闭
+            gra=Tk()    #生成新窗口，用以输入学生分数
+            gra.geometry("250x100")   #窗口大小为250x100
+            gra.title('提示')  #标题为“提示”
+            grade=Label(gra,text='请输入学生成绩')   #第一行为“请输入学生成绩”
+            g=Entry(gra,width=10)    #第二行为输入框，长为10
+            OK2=Button(gra,text='OK',command=fenshu)  #第一个按钮可调用分数函数
+            cancel2=Button(gra,text='Cancel',command=huimie3)  #第二个按钮可关闭该窗口
+            grade.grid_configure(column=1,row=1,columnspan=1,rowspan=1)   #设置位置
+            g.grid_configure(column=1,row=2,columnspan=1,rowspan=1)
+            OK2.grid_configure(column=1,row=3,columnspan=1,rowspan=1)
+            cancel2.grid_configure(column=2,row=3,columnspan=1,rowspan=1)
+            gra.mainloop()
