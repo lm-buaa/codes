@@ -105,7 +105,6 @@ uni=Entry(top,width=10)  #第一行第二列为输入框，长为10
 pwdi=Entry(top,width=10)  #第二行第二列为输入框，长为10
 login=Button(text='Login',command=dengru)  #第三行第一个按钮可调用登陆函数
 tuichu=Button(text='退出',command=huimie)  #第三行第二个按钮可关闭该窗口
-
 top.geometry("300x100")  #窗口大小为300x100
 un.grid_configure(column=1,row=1,columnspan=1,rowspan=1)  #设置位置
 pwd.grid_configure(column=1,row=2,columnspan=1,rowspan=1)
