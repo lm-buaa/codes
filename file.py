@@ -79,3 +79,38 @@ def aa():                #定义添加学生成绩的aa函数
             OK2.grid_configure(column=1,row=3,columnspan=1,rowspan=1)
             cancel2.grid_configure(column=2,row=3,columnspan=1,rowspan=1)
             gra.mainloop()
+    stu=Tk()   #生成新窗口，用以输入学生姓名
+    stu.geometry("250x100")  #窗口大小为250x100
+    stu.title('提示')  #标题为“提示”
+    student=Label(stu,text='请输入学生姓名')  #第一行为“请输入学生姓名”
+    s=Entry(stu,width=10)  #第二行为输入框，长为10
+    OK1=Button(stu,text='OK',command=xingming)  #第一个按钮可调用姓名函数
+    cancel1=Button(stu,text='Cancel',command=huimie2)  #第二个按钮可关闭该窗口
+
+    student.grid_configure(column=1,row=1,columnspan=1,rowspan=1)  #设置位置
+    s.grid_configure(column=1,row=2,columnspan=1,rowspan=1)
+    OK1.grid_configure(column=1,row=3,columnspan=1,rowspan=1)
+    cancel1.grid_configure(column=2,row=3,columnspan=1,rowspan=1)
+    stu.mainloop()
+
+def cc():                 #定义“查看成绩”函数
+    for i in student_list.keys():   #对student_list列表中的键遍历，将其和对应的值输出
+        print('姓名：',i,'  ','成绩：',student_list[i])
+       
+top=Tk()  #生成初始窗口
+top.title('学生管理系统登陆界面')  #标题为“学生管理系统登陆界面”
+un=Label(top,text='用户名：')  #第一行第一列为“用户名：”
+pwd=Label(top,text='密码：')  #第二行第一列为“密码：”
+uni=Entry(top,width=10)  #第一行第二列为输入框，长为10
+pwdi=Entry(top,width=10)  #第二行第二列为输入框，长为10
+login=Button(text='Login',command=dengru)  #第三行第一个按钮可调用登陆函数
+tuichu=Button(text='退出',command=huimie)  #第三行第二个按钮可关闭该窗口
+
+top.geometry("300x100")  #窗口大小为300x100
+un.grid_configure(column=1,row=1,columnspan=1,rowspan=1)  #设置位置
+pwd.grid_configure(column=1,row=2,columnspan=1,rowspan=1)
+uni.grid_configure(column=2,row=1,columnspan=1,rowspan=1)
+pwdi.grid_configure(column=2,row=2,columnspan=1,rowspan=1)
+login.grid_configure(column=1,row=3,columnspan=1,rowspan=1)
+tuichu.grid_configure(column=2,row=3,columnspan=1,rowspan=1)
+top.mainloop()
